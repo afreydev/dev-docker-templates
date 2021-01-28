@@ -22,6 +22,8 @@ services:
     moodle:
         image: moodle:base
         build: .
+        ports:
+            - 8080:80
         depends_on:
             - db
             - redis
