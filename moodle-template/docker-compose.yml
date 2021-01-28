@@ -32,7 +32,7 @@ services:
         volumes: 
             - ./data/moodle:/var/www/moodledata
             - ./moodle:/var/www/html
-            - ./etc/moodle/config.php:/var/www/html/config.php
+            # - ./etc/moodle/config.php:/var/www/html/config.php
     redis:
         image: redis:5-alpine
         entrypoint: redis-server --appendonly yes
