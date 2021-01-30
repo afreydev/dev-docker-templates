@@ -1,0 +1,26 @@
+version: "3.3"
+services:
+    spring:
+        image: maven:3.6.3-openjdk-8
+        working_dir: /opt/app/
+        command: bash ./bin/run.sh
+        ports:
+            - 8080:8080
+        volumes:
+            - ./:/opt/app/
+        env_file:
+            - ./.env
+        stdin_open: true
+        tty: true
+        depends_on:
+            - mysql
+        expose:
+            - 8080
+    mysql:
+        image: mariadb:10.1
+        ports:
+            - 3306:3306
+        volumes:
+            - ./data/mysql:/var/lib/mysql
+        env_file:
+            - ./.env
