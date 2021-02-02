@@ -1,7 +1,7 @@
 # Starting this App
 
 ```bash
-# Start the Java app (Open localhost:5000/companies/)
+# Start the Java app (Open localhost:8080/companies/)
 docker-compose up -d
 # Populate the DB
 docker-compose run --rm -v ${PWD}:/opt/src -w /opt/src mysql bash
