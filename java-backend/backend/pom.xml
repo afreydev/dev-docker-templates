@@ -26,7 +26,6 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <start-class>core.SpringAppStarter</start-class>
     </properties>
 
 
@@ -36,9 +35,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <executable>true</executable>
-                </configuration>
             </plugin>
         </plugins>
     </build>
