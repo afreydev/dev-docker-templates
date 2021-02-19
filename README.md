@@ -1,9 +1,19 @@
 # Docker for development environments
 
 Currently, Docker is the most difussed container technology. It's possible you are thinking about kubernetes and the decision about don't use Docker as a Runtime.
-Well, it's true. But Docker will be been compatible with K8.
+Well, it's true. But Docker will be compatible with K8.
 
 So, we can continue using Docker for another things like Development.
+
+# Some concepts
+
+**Image:** It can be defined like a "hard-coded" file system. It can be used like a "template" by the containers.
+
+**Container:** It's a low level set of components that use some Linux features to run a service. Another view is a container is an instance of a image (it has RAM, CPU and storage). Check this [article](https://platform.sh/blog/2020/the-container-is-a-lie/).
+
+**Differences between VM's and Containers:** From this [blog article](https://monadical.com/posts/everyone-should-know-about-docker.html).
+
+"The main difference between Docker and virtualization is the different low-level approach to application containment. With a virtual machine, an isolated pool of “virtual” computational resources are divided out through a special kind of software called a hypervisor. (Examples of hypervisor technologies include VMWare, Xen, and VirtualBox.) By contrast, Docker uses un-virtualized resources shared with its host system, but uses cgroups and kernel namespaces to effectively present a fake “isolated” system to each application within. Practically speaking, Docker is able to more efficiently share system resources across applications and their host, because it doesn’t have the added overhead of passing all resource accesses through a hypervisor process."
 
 # Docker compose
 
