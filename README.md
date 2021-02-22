@@ -49,3 +49,12 @@ services:   # Block for services definition
   redis:
     image: redis      # Another service
 ```
+
+# Steps to create a dev environment using Docker Compose
+
+* Check what services your application have.
+* Review your application use environment variable to get settings (usernames, passwords, endpoints, hosts, etc).
+* Review you can use an existing image to dockerize your services.
+* Create or extend images for your custom services using Dockerfiles.
+* Collect the config files your backing services uses. Check you cannot use env variables to config them.
+* Write your docker-compose file mapping env vars and config files in each required service.
