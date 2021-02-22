@@ -55,6 +55,11 @@ services:   # Block for services definition
 * Check what services your application have.
 * Review your application use environment variable to get settings (usernames, passwords, endpoints, hosts, etc).
 * Review you can use an existing image to dockerize your services.
-* Create or extend images for your custom services using Dockerfiles.
+* Identify what is the default exec command for your services. (Check [CMD](https://docs.docker.com/engine/reference/builder/#cmd) and [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint))
+* Create or extend images for your custom services using Dockerfiles. (Using [docker](https://docs.docker.com/engine/reference/builder/))
 * Collect the config files your backing services uses. Check you cannot use env variables to config them.
 * Write your docker-compose file mapping env vars and config files in each required service.
+
+# Notes:
+
+* A exec form in docker is: entrypoint + cmd. (An entrypoint [example](https://github.com/Monadical-SAS/oddslingers.poker/blob/main/bin/entrypoint.sh))
