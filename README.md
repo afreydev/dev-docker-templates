@@ -63,3 +63,4 @@ services:   # Block for services definition
 # Notes:
 
 * A exec form in docker is: entrypoint + cmd. (An entrypoint [example](https://github.com/Monadical-SAS/oddslingers.poker/blob/main/bin/entrypoint.sh))
+* [https://12factor.net/](https://12factor.net/)
