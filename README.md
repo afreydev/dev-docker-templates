@@ -52,7 +52,7 @@ services:   # Block for services definition
 
 # Steps to create a dev environment using Docker Compose
 
-* Check what services your application have.
+* Check what services your application have. ([Example](https://github.com/afreydev/manylinux-web))
 * Review your application use environment variable to get settings (usernames, passwords, endpoints, hosts, etc).
 * Review you can use an existing image to dockerize your services.
 * Identify what is the default exec command for your services. (Check [CMD](https://docs.docker.com/engine/reference/builder/#cmd) and [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint))
