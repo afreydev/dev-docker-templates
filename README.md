@@ -20,15 +20,25 @@ So, we can continue using Docker for another things like Development.
 Docker-compose is a technology for running multi container docker applications. You can use it for deploy stacks in any place (usually a server).
 But this is useful for helping in the development stuff.
 
-# Basic compose commands
+# Basic docker and docker-compose commands
 
 ```bash
+# Pull an image
+docker-compose pull <image>
+# Run container (e.g. nginx)
+docker run -ti --name -d -p 8082:80 -v $PWD:/opt/app nginx
+# Show logs
+docker logs nginx 
+# List containers
+docker ps
 # Start an stack
 docker-compose up
 # Start a stack in bg
 docker-compose up -d
 # Stop and delete containers
 docker-compose down
+# List services
+docker-compose ps
 # Run some command in a service (starting the service)
 docker-compose run --rm container-name command
 # If the service is up. Run in an existing container
