@@ -24,7 +24,7 @@ But this is useful for helping in the development stuff.
 
 ```bash
 # Pull an image
-docker-compose pull <image>
+docker pull <image>
 # Run container (e.g. nginx)
 docker run -ti --name -d -p 8082:80 -v $PWD:/opt/app nginx
 # Show logs
