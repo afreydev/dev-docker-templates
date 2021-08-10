@@ -23,7 +23,7 @@ buildah copy "$CONTAINER" 'api/requirements.txt' "$FLASK_ROOT/requirements.txt"
 buildah run "$CONTAINER" -- pip install virtualenv
 buildah run "$CONTAINER" -- virtualenv "/opt/$VENV_NAME"
 buildah config --env PATH="/opt/${VENV_NAME}/bin:\${PATH}" "$CONTAINER"
-
+buildah run "$CONTAINER" -- sh -c "pip install -r requirements.txt && rm requirements.txt"
 buildah run "$CONTAINER" -- sh -c """
     userdel $FLASK_USER && addgroup --system --gid $FLASK_USER_ID $FLASK_USER && \
     adduser --system --uid $FLASK_USER_ID --no-create-home --ingroup $FLASK_USER --shell /bin/false $FLASK_USER
@@ -35,6 +35,7 @@ buildah run "$CONTAINER" -- sh -c """
 
 buildah copy "$CONTAINER" 'api' "$FLASK_ROOT"
 buildah config --user "$FLASK_USER" "$CONTAINER"
+buildah config --cmd "bash run.sh" "$CONTAINER"
 
 # Finally saves the running container to an image
 buildah commit --format docker "$CONTAINER" flask-backend:latest
