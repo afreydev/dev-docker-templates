@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#set -o errexit
+set -o errexit
 
 FLASK_ROOT="/opt/api"
 FLASK_USER="www-data"

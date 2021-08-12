@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 ./Buildahfile.sh
 PODMAN_NETWORK="companies_network"
 DB_CONTAINER_NAME="companies_mariadb"
