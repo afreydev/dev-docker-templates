@@ -18,3 +18,10 @@ podman run --rm -ti -v ${PWD}:/opt/src -w /opt/src --network=companies_network  
 mysql -ucompanies -hmysql -p
 mysql -ucompanies -hmysql -p companies < ./db/creation.sql
 ```
+
+# Using podman-compose
+
+podman-compose up -d
+sudo podman run -ti --network host --rm -v ${PWD}:/opt -w /opt docker.io/mariadb:10.1 bash
+mysql -ucompanies -h127.0.0.1 -p
+mysql -ucompanies -h127.0.0.1 -p companies < ./db/creation.sql
